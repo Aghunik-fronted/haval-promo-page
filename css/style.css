@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;; 
-    background-color: #000000;
     color: #ffffff;
 }
 
@@ -251,6 +250,401 @@ body {
     background-color: #00b3a9;
     transform: translateY(-2px);
 }
+.promo-timer {
+    padding: 60px 0;
+    background-color: #F3F3F3; 
+}
+
+.timer-grid-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 40px;
+    border-radius: 8px;
+    /* ИСПРАВЛЕНО: Чистый белый фон карточки и мягкая тень для контраста на сером фоне */
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.timer-grid-card__center {
+    grid-column: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ИСПРАВЛЕНО: Текст заголовка теперь темно-серый, он мгновенно появится на экране */
+.timer-grid-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111111; 
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.timer-grid-card__left-bottom {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: flex-end; 
+    justify-self: flex-start; 
+}
+
+.timer-grid-card__right {
+    grid-column: 3;
+    justify-self: flex-end; 
+}
+
+.timer-grid-card__chat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.timer-grid-card__chat-btn:hover {
+    background-color: #111111;
+    border-color: #00cabf;
+    transform: translateY(-2px);
+}
+
+.timer-grid-card__chat-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.timer-grid-card__btn-submit {
+    background-color: #00cabf;
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.timer-grid-card__btn-submit:hover {
+    background-color: #00b3a9;
+    transform: translateY(-2px);
+}
+
+.timer-grid-card__counter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.catalog {
+    display: flex;
+    padding: 60px 0;
+    background-color: #fff; 
+}
+
+.catalog__container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.catalog__title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Ограничиваем Swiper по ширине макета (примерно 500px - 550px на одну карточку) */
+.catalog__swiper {
+    /* padding: 30px 0 60px 0 !important; */
+    max-width: 1140px; 
+    margin: 0 auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 21px;
+}
+/* Сама серая карточка (Слайд) */
+.car-slide {
+    max-width: 560px;
+    width: 100%;
+    background-color: #F8F8F8; /* Легкий серый фон карточки из макета */
+    border: 1px solid #EAEAEA;
+    padding: 40px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Элементы строго вертикально */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.car-slide__container {
+    background: url('../img/Mask-group.png') #fff no-repeat;
+    border: 1px solid #cccccc;
+    padding: 24px;
+    box-sizing: border-box;
+    max-width: 480px;
+    width: 100%;
+}
+/* Внутренний белый блок с рамкой (где машина и цены) */
+.car-slide__white-box {
+    background-color: #ffffff;
+    border: 1px solid #EAEAEA;
+    padding: 25px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Строка: Название и Тест-драйв */
+.car-slide__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.title-box {
+    max-width: 294px;
+    width: 100%;
+}
+.car-slide__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.car-slide__test-drive {
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.car-slide__test-drive:hover {
+    color: #00cabf;
+}
+
+/* Бирюзовая плашка "В наличии" в правом верхнем углу всей карточки */
+.car-slide__badge {
+    position: absolute;
+    top: -20px;
+    right: 25px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #00cabf;
+    color: #ffffff;
+    padding: 6px 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+}
+
+.car-slide__bold {
+    color: #000;
+}
+/* Блок выгоды */
+.car-slide__benefit {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: left;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.car-slide__benefit-price {
+    color: #00cabf;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Обертка для фото автомобиля */
+.car-slide__image-wrapper {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    /* Здесь при необходимости можно подключить фоновые линии из Figma */
+}
+
+.car-slide__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Кружочки переключения цветов под белым блоком */
+.car-slide__colors {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px 0 27px;
+    box-sizing: border-box;
+}
+
+.car-slide__color-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    padding: 0;
+}
+
+/* Расцветки кнопок */
+.car-slide__color-btn--grey   { background-color: #A1A1A1; }
+.car-slide__color-btn--black  { background-color: #000000; }
+.car-slide__color-btn--silver { background-color: #E2E2E2; }
+.car-slide__color-btn--orange { background-color: #B44223; }
+.car-slide__color-btn--white  { background-color: #B44223; border: 1px solid #cccccc; }
+
+.car-slide__color-btn--active {
+    box-shadow: 0 0 5px 2px #000, 0 0 0 3px #fff;
+    background: #a1a1a1;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #00cabf;
+}
+.car-slide__features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.car-slide__feature-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.car-slide__feature-item:hover {
+    font-size: 14px;
+    color: #00cabf;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.car-slide__feature-item--full {
+    grid-column: span 2;
+}
+
+.car-slide__feat-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.feat-icon__hover {
+    position: absolute;
+    left: -1px;
+    top: 0;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background: #00cabf;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.car-slide__feature-item:hover .feat-icon__hover {
+    transition: all 0.3s;
+    opacity: 1;
+}
+.car-slide__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.car-slide__btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* 1. Бирюзовая кнопка */
+.car-slide__btn--cyan {
+    background-color: #00cabf;
+    color: #ffffff;
+}
+.car-slide__btn--cyan:hover { background-color: #00b3a9; }
+
+/* 2. Черная кнопка */
+.car-slide__btn--black {
+    background-color: #000000;
+    color: #ffffff;
+}
+.car-slide__btn--black:hover { background-color: #222222; }
+
+/* 3. Светлая кнопка с рамкой */
+.car-slide__btn--transparent {
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #000000;
+}
+.car-slide__btn--transparent:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Стрелочки Swiper */
+.catalog__swiper .swiper-button-next,
+.catalog__swiper .swiper-button-prev { color: #00cabf !important; }
+.catalog__swiper .swiper-pagination-bullet-active { background: #00cabf !important; }
 
 @media (max-width: 992px) {
     .nav__container {
@@ -262,6 +656,48 @@ body {
     .nav__list {
         justify-content: center;
         gap: 15px;
+    }
+    .timer-grid-card {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .timer-grid-card__center {
+        grid-column: 1;
+    }
+
+    .timer-grid-card__left-bottom {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .timer-grid-card__right {
+        grid-column: 1;
+        justify-self: center;
+    }
+    .timer-grid-card {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .timer-grid-card__center {
+        grid-column: 1;
+    }
+
+    .timer-grid-card__left-bottom {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .timer-grid-card__right {
+        grid-column: 1;
+        justify-self: center;
     }
 }
 
@@ -305,5 +741,34 @@ body {
     }
     .nav__list {
         gap: 10px;
+    }
+    .car-slide {
+        padding: 20px;
+    }
+    
+    .car-slide__title {
+        font-size: 18px;
+    }
+    
+    .car-slide__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .car-slide__badge {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 4px;
+        padding: 6px;
+    }
+    
+    .car-slide__features {
+        grid-template-columns: 1fr; /* На смартфонах фичи выстраиваются в один ряд */
+    }
+    
+    .car-slide__feature-item--full {
+        grid-column: span 1;
     }
 }
