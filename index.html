@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Официальный дилер HAVAL</title>
-    <link rel="stylesheet" href="https://cloudflare.com" />
-    <!-- <link rel="stylesheet" href="https://jsdelivr.net" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/timer.css">
+
 </head>
 <body>
     <header class="header">
@@ -83,51 +84,41 @@
                 </button>
             </div>
         </section>
-        
         <section class="promo-action">
-            <div class="container">
+            <div class="promo-container">
+                <div class="timer-grid-card__left-bottom">
+                    <button type="button" class="timer-grid-card__chat-btn" data-fancybox data-src="#modal-form" aria-label="Начать диалог в чате">
+                        <img src="img/icons/button-block.png" alt="Иконка чата" class="timer-grid-card__chat-icon">
+                    </button>
+                 </div>
                 <div class="timer-grid-card">
                     <div class="timer-grid-card__center">
-                        <h3 class="timer-grid-card__title">Оставьте заявку и зафиксируйте условия</h3>
-                        <div class="timer-grid-card__counter">
-                            
-                            <!-- Официальный плагин Sinoby Timer из ТЗ -->
-                            <style>.sinoby-timer[data-sinoby-reserve="sinoby-49q0l1"]{display:block;min-height:108px;}@media (max-width:767px){.sinoby-timer[data-sinoby-reserve="sinoby-49q0l1"]{min-height:80px;}}</style>
-                            <div class="sinoby-timer"
-                                data-sinoby-reserve="sinoby-49q0l1"
-                                data-config='{
-                                    "type": "fixed-end",
-                                    "preset": "rings-soft",
-                                    "schedule": {
-                                        "endAt": "2026-06-10T15:00:00"
-                                    },
-                                    "visibility": {
-                                        "separator": false
-                                    },
-                                    "style": {
-                                        "digitSize": 50,
-                                        "digitGap": 8,
-                                        "digitColor": "#000000",
-                                        "labelSize": 18,
-                                        "labelGap": 0,
-                                        "labelColor": "#000000",
-                                        "cardBackgroundColor": "#f3f3f3",
-                                        "ringCurrentColor": "#00cabf",
-                                        "ringRemainingColor": "#d5d5d5",
-                                        "ringThickness": 5
-                                    }
-                                }'
-                                data-lazy="true"></div>
-                            
-                            <!-- ИСПРАВЛЕНО: Сюда возвращен корректный и обязательный скрипт плагина -->
-                            <script src="https://sinoby.ru"></script>
-        
+                        <h2 class="timer-grid-card__title">Оставьте заявку и зафиксируйте условия</h2>
+                        <div class="sinoby-timer"
+                            data-sinoby-reserve="sinoby-ns0k1s"
+                            data-config='{
+                                "type": "fixed-end",
+                                "preset": "rings-soft",
+                                "schedule": {
+                                    "endAt": "2026-06-10T15:00:00"
+                                },
+                                "visibility": {
+                                    "separator": false
+                                },
+                                "style": {
+                                    "digitSize": 36,
+                                    "digitGap": 8,
+                                    "digitColor": "#000000",
+                                    "labelSize": 14,
+                                    "labelGap": 0,
+                                    "labelColor": "#4a4747",
+                                    "cardBackgroundColor": "#f8fafc",
+                                    "ringCurrentColor": "#00cabf",
+                                    "ringRemainingColor": "#dadada"
+                                }
+                            }'
+                            data-lazy="true">
                         </div>
-                    </div>
-                    <div class="timer-grid-card__left-bottom">
-                        <button type="button" class="timer-grid-card__chat-btn" data-fancybox data-src="#modal-form">
-                            <img src="img/icons/button-block.png" alt="Начать диалог" class="timer-grid-card__chat-icon">
-                        </button>
                     </div>
                     <div class="timer-grid-card__right">
                         <button type="button" class="timer-grid-card__btn-submit" data-fancybox data-src="#modal-form">
@@ -149,7 +140,7 @@
                                         <p class="car-slide__benefit">Выгода до <span class="car-slide__benefit-price">410 000 ₽</span></p>
                                     </div>
                                     <a href="#" class="car-slide__test-drive" data-fancybox data-src="#modal-form">
-                                        <img src="img/icons/lets-icons_filter6.png" class="car-slide__td-icon">
+                                        <img src="img/icons/lets-icons_filter6.png" alt="/" class="car-slide__td-icon">
                                         Записаться на тест-драйв
                                     </a>
                                     <div class="car-slide__badge">В наличии<br> 
@@ -157,13 +148,15 @@
                                     </div>
                                 </div>
                                 <div class="car-slide__image-wrapper">
-                                    <img src="img/non-metallic-gray.webp" alt="HAVAL DARGO X" class="car-slide__img" id="img-dargo">
+                                    <img src="img/non-metallic-gray.webp" alt="HAVAL M6" class="car-slide__img car-slide__img--active" data-color="grey">
+                                    <img src="img/black-non-metallic.webp" alt="HAVAL M6" class="car-slide__img" data-color="black" >
+                                    <img src="img/white-non-metallic.webp" alt="HAVAL M6" class="car-slide__img" data-color="white">
                                 </div>
                             </div>
                             <div class="car-slide__colors" data-target="img-dargo">
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--black" data-image="img/cars/m6-black.png" aria-label="Черный"></button>
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--white" data-image="img/cars/m6-white.png" aria-label="Белый"></button>
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--grey car-slide__color-btn--active" data-image="img/cars/m6-silver.png" aria-label="Серый"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--black" data-color="black" aria-label="Черный"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--white" data-color="white" aria-label="Белый"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--grey car-slide__color-btn--active" data-color="grey" aria-label="Серый"></button>
                             </div>
                             <ul class="car-slide__features">
                                 <li class="car-slide__feature-item">
@@ -240,7 +233,7 @@
                                         <p class="car-slide__benefit">Выгода до <span class="car-slide__benefit-price">320 000 ₽</span></p>
                                     </div>
                                     <a href="#" class="car-slide__test-drive" data-fancybox data-src="#modal-form">
-                                        <img src="img/icons/lets-icons_filter6.png" class="car-slide__td-icon">
+                                        <img src="img/icons/lets-icons_filter6.png" alt="/" class="car-slide__td-icon">
                                         Записаться на тест-драйв
                                     </a>
                                     <div class="car-slide__badge">
@@ -248,14 +241,17 @@
                                     </div>
                                 </div>
                                 <div class="car-slide__image-wrapper">
-                                    <img src="img/Terracotta.webp" alt="HAVAL DARGO X" class="car-slide__img" id="img-dargo">
+                                    <img src="img/Agate.webp" alt="HAVAL DARGO X" class="car-slide__img" data-color="silver">
+                                    <img src="img/Black-jade.webp" alt="HAVAL DARGO X" class="car-slide__img" data-color="black">
+                                    <img src="img/Graphite-quartz.webp" alt="HAVAL DARGO X" class="car-slide__img" data-color="grey"> 
+                                    <img src="img/Terracotta.webp" alt="HAVAL DARGO X" class="car-slide__img car-slide__img--active" data-color="orange">
                                 </div>
                             </div>
                             <div class="car-slide__colors" data-target="img-dargo">
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--grey" data-image="img/non-metallic-gray.webp" aria-label="Серый"></button>
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--black" data-image="img/black-dargo.webp" aria-label="Черный"></button>
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--silver" data-image="img/silver-dargo.webp" aria-label="Серебристый"></button>
-                                <button type="button" class="car-slide__color-btn car-slide__color-btn--orange" data-image="img/orange-dargo.webp" aria-label="Оранжевый"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--grey" data-color="grey" aria-label="Серый"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--black" data-color="black" aria-label="Черный"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--silver" data-color="silver" aria-label="Серебристый"></button>
+                                <button type="button" class="car-slide__color-btn car-slide__color-btn--orange car-slide__color-btn--active" data-color="orange" aria-label="Оранжевый"></button>
                             </div>
                             <ul class="car-slide__features">
                                 <li class="car-slide__feature-item">
@@ -332,20 +328,36 @@
             </div>
         </section>
     </main>
-
-    <!-- Скрытое модальное окно для Fancybox -->
-    <div id="modal-form" style="display: none;" class="popup-modal">
-        <h3 class="popup-modal__title">Зафиксировать условия</h3>
-        <form class="popup-modal__form">
-            <input type="tel" class="popup-modal__input" placeholder="+7 (___) ___-__-__" required>
-            <button type="submit" class="popup-modal__btn">Отправить заявку</button>
-        </form>
+    
+    <div id="phone-modal" class="modal" style="display: none;">
+        <div class="modal-overlay">
+            <div class="modal-window">
+            <button type="button" class="close-btn">&times;</button>
+            <div class="modal-content">
+                <h3 class="modal-title">Оставьте номер телефона</h3>
+                <p class="modal-subtitle">Мы перезвоним вам в течение 15 минут</p>
+                <form id="phone-form" class="phone-form">
+                    <div class="form-group">
+                        <label for="user-phone" class="form-label visually-hidden">Телефон</label>
+                        <input
+                            type="tel"
+                            id="user-phone"
+                            class="form-input"
+                            placeholder="+7 (___) ___-__-__"
+                            required
+                        >
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- ИСПРАВЛЕНО: Подключены обязательные скрипты для работы кнопок и модальных окон -->
-    <script src="https://cloudflare.com"></script>
-    <script src="https://cloudflare.com"></script>
-    <!-- <script src="https://jsdelivr.net"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://timer.sinoby.ru/public/assets/embed/timer-core.min.js?v=20260514a"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

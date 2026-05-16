@@ -1,0 +1,28 @@
+.sinoby-timer[data-sinoby-reserve="sinoby-ns0k1s"]{
+    display: inline-block; 
+    max-height: 80px;
+}
+.sinoby-timer {
+    transform: scale(0.8);    /* Уменьшает весь таймер на 20 % */
+    transform-origin: center;
+}
+
+/* Или более точный контроль через ширину/высоту */
+.sinoby-timer .sinoby-ring,
+.sinoby-timer .sinoby-digit {
+    width: 60px !important;   /* Фиксированная ширина */
+    height: 60px !important; /* Фиксированная высота */
+}
+
+.sinoby-timer .sinoby-digit .sinoby-value {
+    font-size: 36px !important; /* Размер цифр */
+}
+
+.sinoby-timer .sinoby-label {
+    font-size: 12px !important; /* Размер подписей */
+}
+@media (max-width:767px){
+    .sinoby-timer[data-sinoby-reserve="sinoby-ns0k1s"]{
+        height: 50px;
+    }
+}

@@ -250,54 +250,55 @@ body {
     background-color: #00b3a9;
     transform: translateY(-2px);
 }
-.promo-timer {
-    padding: 60px 0;
-    background-color: #F3F3F3; 
+.promo-action {
+    background-color: #eeeded;
 }
 
-.timer-grid-card {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 40px;
-    border-radius: 8px;
-    /* ИСПРАВЛЕНО: Чистый белый фон карточки и мягкая тень для контраста на сером фоне */
-    background: #ffffff;
-    border: 1px solid #e2e2e2;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+.promo-container {
     position: relative;
+}
+.timer-grid-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 60px 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    position: relative;
+    max-width: 1140px; 
+    width: 100%;
+    gap: 16px;
 }
 
 .timer-grid-card__center {
-    grid-column: 2; 
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    max-width: 560px;
+    width: 100%;
+    margin: 0;
 }
 
-/* ИСПРАВЛЕНО: Текст заголовка теперь темно-серый, он мгновенно появится на экране */
 .timer-grid-card__title {
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     color: #111111; 
-    margin-bottom: 20px;
     letter-spacing: 0.5px;
 }
 
 .timer-grid-card__left-bottom {
-    grid-column: 1;
     grid-row: 1;
-    align-self: flex-end; 
-    justify-self: flex-start; 
+    position: absolute;
+    bottom: 16px;
+    left: 55px;
 }
 
-.timer-grid-card__right {
-    grid-column: 3;
-    justify-self: flex-end; 
+.timer-grid-card__righ {
+    max-width: 480px;
+    width: 100%;
 }
-
 .timer-grid-card__chat-btn {
     display: flex;
     align-items: center;
@@ -323,6 +324,7 @@ body {
 }
 
 .timer-grid-card__btn-submit {
+    width: 100%;
     background-color: #00cabf;
     color: #fff;
     border: none;
@@ -369,11 +371,10 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Ограничиваем Swiper по ширине макета (примерно 500px - 550px на одну карточку) */
 .catalog__swiper {
-    /* padding: 30px 0 60px 0 !important; */
     max-width: 1140px; 
     margin: 0 auto;
+    padding-bottom: 0 !important;
 }
 
 .swiper-wrapper {
@@ -382,18 +383,19 @@ body {
     align-items: center;
     gap: 21px;
 }
-/* Сама серая карточка (Слайд) */
+
 .car-slide {
     max-width: 560px;
     width: 100%;
-    background-color: #F8F8F8; /* Легкий серый фон карточки из макета */
+    background-color: #F8F8F8; 
     border: 1px solid #EAEAEA;
     padding: 40px;
     box-sizing: border-box;
-    position: relative;
+    position: relative !important;
     display: flex;
-    flex-direction: column; /* Элементы строго вертикально */
+    flex-direction: column; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    overflow: visible !important;
 }
 
 .car-slide__container {
@@ -404,7 +406,7 @@ body {
     max-width: 480px;
     width: 100%;
 }
-/* Внутренний белый блок с рамкой (где машина и цены) */
+
 .car-slide__white-box {
     background-color: #ffffff;
     border: 1px solid #EAEAEA;
@@ -413,9 +415,9 @@ body {
     margin-bottom: 25px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-/* Строка: Название и Тест-драйв */
 .car-slide__header {
     display: flex;
     align-items: center;
@@ -449,11 +451,10 @@ body {
     color: #00cabf;
 }
 
-/* Бирюзовая плашка "В наличии" в правом верхнем углу всей карточки */
 .car-slide__badge {
-    position: absolute;
-    top: -20px;
-    right: 25px;
+    position: absolute !important;
+    top: -20px !important;
+    right: 42px;
     min-height: 42px;
     display: flex;
     align-items: center;
@@ -466,14 +467,17 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     text-align: center;
-    line-height: 1.3;
     letter-spacing: 0.5px;
+    overflow: visible !important; 
+    line-height: 1.4 !important;
+    position: absolute !important;
+    z-index: 99999 !important;
 }
 
 .car-slide__bold {
     color: #000;
 }
-/* Блок выгоды */
+
 .car-slide__benefit {
     font-size: 16px;
     color: #000000;
@@ -491,7 +495,6 @@ body {
     margin: 0;
 }
 
-/* Обертка для фото автомобиля */
 .car-slide__image-wrapper {
     width: 100%;
     height: 180px;
@@ -499,16 +502,15 @@ body {
     align-items: center;
     justify-content: center;
     margin: 10px 0;
-    /* Здесь при необходимости можно подключить фоновые линии из Figma */
 }
 
 .car-slide__img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    cursor: pointer;
 }
 
-/* Кружочки переключения цветов под белым блоком */
 .car-slide__colors {
     display: flex;
     justify-content: center;
@@ -527,18 +529,33 @@ body {
     padding: 0;
 }
 
-/* Расцветки кнопок */
+.car-slide__image-wrapper .car-slide__img {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.car-slide__image-wrapper .car-slide__img--active {
+    display: block;
+    animation: fadeInCar 0.4s ease;
+}
+
+@keyframes fadeInCar {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 .car-slide__color-btn--grey   { background-color: #A1A1A1; }
 .car-slide__color-btn--black  { background-color: #000000; }
 .car-slide__color-btn--silver { background-color: #E2E2E2; }
 .car-slide__color-btn--orange { background-color: #B44223; }
-.car-slide__color-btn--white  { background-color: #B44223; border: 1px solid #cccccc; }
+.car-slide__color-btn--white  { background-color: #ffffff; border: 1px solid #cccccc; }
 
 .car-slide__color-btn--active {
     box-shadow: 0 0 5px 2px #000, 0 0 0 3px #fff;
-    background: #a1a1a1;
     transform: scale(1.2);
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #00cabf;
+    
 }
 .car-slide__features {
     display: grid;
@@ -616,21 +633,18 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* 1. Бирюзовая кнопка */
 .car-slide__btn--cyan {
     background-color: #00cabf;
     color: #ffffff;
 }
 .car-slide__btn--cyan:hover { background-color: #00b3a9; }
 
-/* 2. Черная кнопка */
 .car-slide__btn--black {
     background-color: #000000;
     color: #ffffff;
 }
 .car-slide__btn--black:hover { background-color: #222222; }
 
-/* 3. Светлая кнопка с рамкой */
 .car-slide__btn--transparent {
     background-color: transparent;
     color: #000000;
@@ -641,98 +655,188 @@ body {
     color: #ffffff;
 }
 
-/* Стрелочки Swiper */
 .catalog__swiper .swiper-button-next,
-.catalog__swiper .swiper-button-prev { color: #00cabf !important; }
-.catalog__swiper .swiper-pagination-bullet-active { background: #00cabf !important; }
-
-@media (max-width: 992px) {
-    .nav__container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .nav__list {
-        justify-content: center;
-        gap: 15px;
-    }
-    .timer-grid-card {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-        padding: 30px 20px;
-    }
-
-    .timer-grid-card__center {
-        grid-column: 1;
-    }
-
-    .timer-grid-card__left-bottom {
-        grid-column: 1;
-        grid-row: 3;
-        align-self: center;
-        justify-self: center;
-    }
-
-    .timer-grid-card__right {
-        grid-column: 1;
-        justify-self: center;
-    }
-    .timer-grid-card {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-        padding: 30px 20px;
-    }
-
-    .timer-grid-card__center {
-        grid-column: 1;
-    }
-
-    .timer-grid-card__left-bottom {
-        grid-column: 1;
-        grid-row: 3;
-        align-self: center;
-        justify-self: center;
-    }
-
-    .timer-grid-card__right {
-        grid-column: 1;
-        justify-self: center;
-    }
+.catalog__swiper .swiper-button-prev {
+    display: none !important;
 }
 
-@media (max-width: 768px) {
-    .header__container {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-    }
+#modal-form .swiper-button-next,
+#modal-form .swiper-button-prev {
+    display: flex !important; 
+    color: #333; 
+}
 
-    .header__logos {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .header__divider {
-        display: none;
-    }
-    .header__logo-dealer {
-        padding-left: 0;
-    }
-    .hero {
-        min-height: 400px; 
-        padding-top: 40px;
-        background-size: contain; 
-        background-position: center center;
-    }
-    
-    .hero__title {
-        font-size: 20px;
-    }
-    
-    .hero__btn {
-        padding: 12px 30px;
-        font-size: 12px;
-    }
+.catalog__swiper .swiper-pagination {
+    display: none !important;
+}
+
+#modal-form .swiper-pagination {
+    display: block !important;
+    bottom: 10px !important; 
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; 
+  z-index: 1000;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  z-index: 1001;
+}
+.modal.active .modal-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-window {
+  background: white;
+  border-radius: 20px;
+  padding: 32px 24px 24px;
+  max-width: 400px;
+  width: 90%;
+  transform: translateY(-20px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal.active .modal-window {
+  transform: translateY(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 36px;
+  color: #999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  z-index: 2;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.modal-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #5c6bc0;
+  box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.15);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #5c6bc0 0%, #3949ab 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(92, 107, 192, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .modal-window {
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .close-btn {
+    top: 8px;
+    right: 12px;
+    font-size: 40px;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -765,7 +869,7 @@ body {
     }
     
     .car-slide__features {
-        grid-template-columns: 1fr; /* На смартфонах фичи выстраиваются в один ряд */
+        grid-template-columns: 1fr; 
     }
     
     .car-slide__feature-item--full {
