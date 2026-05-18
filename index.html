@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Официальный дилер HAVAL</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/timer.css">
 
@@ -51,6 +52,16 @@
     
     <nav class="nav">
         <div class="container nav__container">
+            <button class="burger-menu"
+                aria-label="Открыть меню"
+                data-fancybox
+                data-src="#mobile-menu-content">
+                <svg width="30" height="21" viewBox="0 0 30 21" fill="none">
+                    <rect width="30" height="3" fill="#333"/>
+                    <rect y="9" width="30" height="3" fill="#333"/>
+                    <rect y="18" width="30" height="3" fill="#333"/>
+                </svg>
+            </button>
             <ul class="nav__list nav__list--models">
                 <li class="nav__item"><a href="#" class="nav__link">M6</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">DARGO X</a></li>
@@ -67,9 +78,31 @@
                 <li class="nav__item"><a href="#" class="nav__link">Тест-драйв</a></li>
                 <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
             </ul>
+
+            <div style="display: none; position: relative;">
+                <div id="mobile-menu-content" class="fancybox-mobile-menu">
+                    <div class="mobile-menu-header">
+                        <h3>Меню</h3>
+                        <button data-fancybox-close class="fancybox-close-btn">×</button>
+                    </div>
+                    <ul class="mobile-menu-list">
+                        <li class="mobile-menu-item"><a href="#">M6</a></li>
+                        <li class="mobile-menu-item"><a href="#">DARGO X</a></li>
+                        <li class="mobile-menu-item"><a href="#">DARGO</a></li>
+                        <li class="mobile-menu-item"><a href="#">JOLION</a></li>
+                        <li class="mobile-menu-item"><a href="#">F7x</a></li>
+                        <li class="mobile-menu-item"><a href="#">F7</a></li>
+                        <li class="mobile-menu-item"><a href="#">H9</a></li>
+                        <li class="mobile-menu-item"><a href="#">GWM Poer</a></li>
+                        <li class="mobile-menu-item"><a href="#">GWM Poer KINGKONG</a></li>
+                        <li class="mobile-menu-item"><a href="#">Подобрать комплектацию</a></li>
+                        <li class="mobile-menu-item"><a href="#">Тест-драйв</a></li>
+                        <li class="mobile-menu-item"><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
-    
     <main>
         <section class="hero">
             <div class="container hero__container">
@@ -79,8 +112,8 @@
                         <span class="hero__title--cyan">в Химках к Чёрной пятнице!</span>
                     </h1>
                 </div>
-                <button class="hero__btn" data-fancybox data-src="#modal-form">
-                    Зафиксировать условия
+                <button class="hero__btn" data-action="open-phone-modal">
+                    Оставить заявку
                 </button>
             </div>
         </section>
@@ -106,7 +139,7 @@
                                     "separator": false
                                 },
                                 "style": {
-                                    "digitSize": 36,
+                                    "digitSize": 80,
                                     "digitGap": 8,
                                     "digitColor": "#000000",
                                     "labelSize": 14,
@@ -121,7 +154,7 @@
                         </div>
                     </div>
                     <div class="timer-grid-card__right">
-                        <button type="button" class="timer-grid-card__btn-submit" data-fancybox data-src="#modal-form">
+                        <button type="button" class="timer-grid-card__btn-submit" data-action="open-phone-modal">
                             Зафиксировать условия
                         </button>
                     </div>
@@ -220,9 +253,9 @@
                                 </li>
                             </ul>
                             <div class="car-slide__actions">
-                                <button type="button" class="car-slide__btn car-slide__btn--cyan" data-fancybox data-src="#modal-form">Узнать стоимость</button>
-                                <button type="button" class="car-slide__btn car-slide__btn--black" data-fancybox data-src="#modal-form">Рассчитать кредит</button>
-                                <button type="button" class="car-slide__btn car-slide__btn--transparent" data-fancybox data-src="#modal-form">Подобрать комплектацию</button>
+                                <button type="button" class="car-slide__btn car-slide__btn--cyan" data-action="open-phone-modal">Узнать стоимость</button>
+                                <button type="button" class="car-slide__btn car-slide__btn--black" data-action="open-phone-modal">Рассчитать кредит</button>
+                                <button type="button" class="car-slide__btn car-slide__btn--transparent" data-action="open-phone-modal">Подобрать комплектацию</button>
                             </div>
                         </div>
                         <div class="swiper-slide car-slide">
@@ -315,9 +348,9 @@
                                 </li>
                             </ul>
                             <div class="car-slide__actions">
-                                <button type="button" class="car-slide__btn car-slide__btn--cyan" data-fancybox data-src="#modal-form">Узнать стоимость</button>
-                                <button type="button" class="car-slide__btn car-slide__btn--black" data-fancybox data-src="#modal-form">Рассчитать кредит</button>
-                                <button type="button" class="car-slide__btn car-slide__btn--transparent" data-fancybox data-src="#modal-form">Подобрать комплектацию</button>
+                                <button type="button" class="car-slide__btn car-slide__btn--cyan" data-action="open-phone-modal">Узнать стоимость</button>
+                                <button type="button" class="car-slide__btn car-slide__btn--black" data-action="open-phone-modal">Рассчитать кредит</button>
+                                <button type="button" class="car-slide__btn car-slide__btn--transparent" data-action="open-phone-modal">Подобрать комплектацию</button>
                             </div>
                         </div>
                     </div>
@@ -354,10 +387,14 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="https://timer.sinoby.ru/public/assets/embed/timer-core.min.js?v=20260514a"></script>
+    <script src="js/script.js" defer></script>
     <script src="js/main.js"></script>
 </body>
 </html>
